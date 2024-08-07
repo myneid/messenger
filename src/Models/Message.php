@@ -148,6 +148,7 @@ class Message extends Model implements Ownerable
         'reacted' => 'boolean',
         'embeds' => 'boolean',
         'extra' => 'array',
+        'body' => 'encrypted'
     ];
 
     /**
