@@ -95,6 +95,7 @@ class ImageRenderService
         $avatar = "{$this->messenger->getAvatarStorage('directory')}/$image";
         Log::error('avatar: ' . $avatar);
         error_log('avatar: ' . $avatar, 3, '/tmp/tanguy.log');
+        file_put_contents('/tmp/tanguy.log', 'avatar: ' . $avatar, FILE_APPEND);
 
         $disk = $this->messenger->getAvatarStorage('disk');
 
