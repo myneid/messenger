@@ -15,6 +15,7 @@ use RTippin\Messenger\Models\Message;
 use RTippin\Messenger\Models\Thread;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Support\Facades\Log;
 
 class ImageRenderService
 {
@@ -92,6 +93,7 @@ class ImageRenderService
     ) {
         //$avatar = "{$this->messenger->getAvatarStorage('directory')}/$alias/$id/$image";
         $avatar = "{$this->messenger->getAvatarStorage('directory')}/$image";
+        Log::info('avatar: ' . $avatar);
 
         $disk = $this->messenger->getAvatarStorage('disk');
 
