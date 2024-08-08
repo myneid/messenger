@@ -93,11 +93,8 @@ class ImageRenderService
     ) {
         //$avatar = "{$this->messenger->getAvatarStorage('directory')}/$alias/$id/$image";
         $avatar = "{$this->messenger->getAvatarStorage('directory')}/$image";
-        Log::error('avatar: ' . $avatar);
-        error_log('avatar: ' . $avatar, 3, storage_path() . '/tanguy.log');
-        file_put_contents(storage_path() . '/tanguy.log', 'avatar: ' . $avatar, FILE_APPEND);
-        dd($avatar);
-        exit;
+
+
         $disk = $this->messenger->getAvatarStorage('disk');
 
         if (!$this->filesystemManager->disk($disk)->exists($avatar)) {
